@@ -1,2 +1,7 @@
 <h1>Home</h1>
 <p>Welcome to the Home page of our Rails application!</p>
+
+<div style="display: inline-flex; gap: 10px; align-items: center;">
+    <%= button_to 'Go to Articles Listing', articles_path, method: :get %>
+    <%= button_to 'About', about_path, method: :get %>
+</div>
