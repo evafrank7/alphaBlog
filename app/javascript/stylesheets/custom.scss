@@ -1,0 +1,8 @@
+// Custom overrides (loaded after pack CSS via stylesheet_link_tag)
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
