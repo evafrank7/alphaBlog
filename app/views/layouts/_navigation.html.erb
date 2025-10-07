@@ -4,6 +4,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <li class="nav-item">
+    <%= link_to "Users", users_path, class: "nav-link" %>
+  </li>
+
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item dropdown">
@@ -18,9 +22,18 @@
       </div>
     </li>
 
-    <li class="nav-item">
-      <%= link_to "Users", users_path, class: "nav-link" %>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+        Categories
+      </a>
+      <div class="dropdown-menu">
+      <% if logged_in? && current_user.admin? %>
+        <%= link_to "Create New Category", new_category_path, class: "dropdown-item" %>
+      <% end %>
+        <%= link_to "View Categories", categories_path, class: "dropdown-item" %>
+      </div>
     </li>
+    
 
     <% if logged_in? %>
     <li class="nav-item dropdown">
@@ -33,6 +46,8 @@
         <%= link_to "Delete Profile", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "dropdown-item text-danger" %>
       </div>
     </li>
+
+    
     <li class="nav-item">
       <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
     </li>
