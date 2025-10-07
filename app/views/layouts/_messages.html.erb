@@ -1,10 +1,16 @@
 <div class="container">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
-        <%= msg %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>  
+  <% flash.each do |type, msg| %>
+    <% bs_class = case type.to_sym
+      when :notice then 'success'
+      when :alert then 'danger'
+      when :error then 'danger'
+      else 'info'
+    end %>
+    <div class="alert alert-<%= bs_class %> alert-dismissible fade show" role="alert">
+      <%= msg %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
   <% end %>
 </div>
