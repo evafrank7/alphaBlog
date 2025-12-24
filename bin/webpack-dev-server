@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+require "logger"
+
+require_relative "../config/boot"
+require "webpacker/webpack_runner"
 
 ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
 ENV["NODE_ENV"]  ||= "development"
