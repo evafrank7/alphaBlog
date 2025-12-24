@@ -11,7 +11,7 @@ window.Popper = Popper
 
 import "bootstrap"                               // Bootstrap 4 JS
 import "bootstrap/dist/css/bootstrap.min.css"    // Bootstrap 4 CSS
-import "../stylesheets/custom.scss"             
+import "../stylesheets/custom.scss"
 
 // Start Rails/Turbolinks
 Rails.start()
